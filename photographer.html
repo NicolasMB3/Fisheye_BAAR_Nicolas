@@ -1,38 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/lightbox.css" rel="stylesheet" type="text/css">
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe </title>
+    <title>Fisheye - photographe</title>
   </head>
   <body>
     <header>
-      <a href="index.html">
-        <img src="assets/images/logo.png" class="logo" />
-      </a>
+       <a href="/index.html"><img src="assets/images/logo.png" class="logo" alt="logo FishEye"></a>
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <div class="info-container" tabindex='1'>
+          <h1 class="photograph-name"></h1>
+          <p class="photograph-location"></p>
+          <p class="photograph-quote"></p>
+        </div>
+        <button class="contact_button" onclick="displayModal()">Contactez-moi</button> 
+      </div>
+      <div class="sort-container">
+        <label for="sort" class="sort-title">Trier par</label>
+        <select name="sort" id="sort" >
+          <option value="popularity">Popularité</option>
+          <option value="date">Date</option>
+          <option value="price">Prix</option>
+        </select>
+      </div>
+      <div class="medias_section">
       </div>
     </main>
+
     <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+      <div class="modal">
+        <header class="contact-header">
+          <h2 class="contact modal-title">Contactez-moi</h2>
+          <img id="close" class="icon-close" src="assets/icons/close.svg" onclick="closeModal()" alt="fermer le formulaire">
         </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
-    <script src="scripts/factories/photographer.js"></script>
+        <form class="contact_form" method="get">
+          <div class="inputs-container">
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom">
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+            <label for="message">Votre message</label>
+            <textarea aria-labelledby="message" id="message" name="message"></textarea>
+          </div>
+          <button type="submit" class="contact_button">Envoyer</button>
+        </form>
+      </div>
+    </div>
+    <div class="info">
+      <p class="info-like-container"><span class="info-like-number"></span><img src='../assets/icons/heart2.svg'  class='heart-icon-bottom' alt='heart2'></p>
+      <h2 class="info-price-container"><span class="info-price-number"></span>€/jour</h2>
+    </div>
+    <script src="scripts/pages/photographer.js" type="module"></script>
+    <script src="scripts/utils/contactForm.js"></script>
   </body>
 </html>

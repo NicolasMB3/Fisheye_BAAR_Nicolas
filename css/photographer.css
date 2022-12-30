@@ -2,11 +2,36 @@
     display: none;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1240px;
+}
+
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
-    margin: 0 100px;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 1240px;
 }
+    .pp {
+        border-radius: 100px;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }   
+    .photograph-name{
+        color:#D3573C ;
+        font-size: 50px;
+        font-weight: 100;
+        margin: 0;
+    }
+    .photograph-location{
+       color:#901C1C ; 
+    }
 
 .contact_button {
     font-size: 20px;
@@ -19,18 +44,27 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+    margin-right: 100px;
+    transition-duration: 0.3s;
+
+}
+
+.contact_button:hover {
+    background-color: #DB8876;
+    color: black;
 }
 
 .modal {
     border-radius: 5px;
     background-color: #DB8876;
-    width: 50%;
+    width: 669px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding: 35px;
     margin: auto;
+    margin-top: 50px;
 }
 
 .modal header {
@@ -43,9 +77,11 @@
 }
 
 .modal header h2 {
-    font-size: 64px;
+    font-size: 38px;
     font-weight: normal;
-    text-align: center;
+    text-align: left;
+    margin: 0;  
+    margin-bottom: 15px;
 }
 
 form {
@@ -56,8 +92,9 @@ form {
 }
 
 form label {
-    color: #312E2E;
-    font-size: 36px;
+    color: #1f1e1e;
+    font-size: 24px;
+    margin: 15px 0 5px 0;
 }
 
 form div {
@@ -68,9 +105,153 @@ form div {
     margin-bottom: 26px;
 }
 
-form input {
+form input:not(#message)  {
     width: 100%;
-    height: 68px;
+    height: 40px;
     border: none;
     border-radius: 5px;
+}
+
+form input{
+    padding-left: 10px;
+    font-size: 24px;
+}
+
+#message {
+    width: 100%;
+    height: 130px;
+    border: none;
+    border-radius: 5px;
+    resize: none;
+
+}
+
+figure img, figure video {
+    height: 300px;
+    width: 350px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+figure{
+    margin: 0;
+}
+
+.medias_section{
+    display: flex; 
+    flex-direction: row; 
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 95px;
+    margin-top: 20px;
+    width: 1240px;
+    object-fit: cover;
+    row-gap: 40px;
+}
+
+.medias_section img {
+   object-fit: cover;
+
+}
+
+figcaption, .figcaption-container{
+    display: flex;
+    flex-direction: row;
+    color: #901C1C;
+    font-weight: 500;
+    font-size: 24px;
+    align-items: center;
+    justify-content: space-between;
+    height: 45px;
+    
+}
+
+figcaption {
+    display: block;
+    overflow: hidden;
+    width: 270px;   
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 24px;
+    line-height: 24px;
+}
+
+.media-likes-count{
+    margin: 0;
+    font-size: 24px;
+}
+
+.heart-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.heart-icon-bottom {
+    width: 17.5px;
+    height: 18.35px;
+    margin-left: 5px;
+    right: 8.33%;
+    top: 12.5%;
+    bottom: 11.04%;
+}
+.btn-like {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    right: 50px;
+    width: 376px;
+    background-color: #DB8876;
+    border-radius: 5px 5px 0 0;
+}
+
+.info p {
+    margin: 0;
+}
+
+.info-like-number {
+    font: DM Sans;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 31.25px;
+    color: black;
+}
+.info-price-container {
+    font: DM Sans;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 31.25px;
+    color: black;
+}
+
+.sort-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    column-gap: 25px;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#sort {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 170px;
+    background-color: #901C1C;
+    color : white;
+    border-radius: 5px;
+    padding: 10px;
 }
