@@ -13,15 +13,16 @@ function photographerFactory(data) {
     const p2 = document.createElement('p');
     const p3 = document.createElement('p');
     const a = document.createElement('a');
-    article.setAttribute("tabindex", 1);
-    article.setAttribute("data-id", id);
+    a.setAttribute("tabindex", 1);
+    a.setAttribute("data-id", id);
     img.setAttribute("src", picture);
-    img.setAttribute("alt", `portrait de ${name}`);
+    img.setAttribute("alt", `Portrait de ${name}`);
     h2.textContent = name;
     p.textContent = `${city}, ${country}`;
     p2.textContent = tagline;
     p3.textContent = price + '€/jour'
     a.classList.add('linkArticle')
+    // On met l'id dans l'URL pour venir le récupérer sur la prochaine page
     a.href = `${photographerLink}?id=${id}`;
     a.append(img, h2);
     article.append(a, p, p2, p3);

@@ -15,7 +15,8 @@
   opacity: 0;
 }
 
-.lightbox_next, .lightbox_prev {
+.lightbox_next,
+.lightbox_prev {
   border: none;
   background: url("/assets/images/arrow.svg") center center / 100% 100%;
   width: 50px;
@@ -45,7 +46,7 @@
   width: 50px;
   height: 50px;
   border: none;
-  background: url(../assets/icons/close2.svg) center center / 100% 100%  no-repeat;
+  background: url(../assets/icons/close2.svg) center center / 100% 100% no-repeat;
   position: fixed;
   text-indent: -3000px;
   top: 20px;
@@ -92,13 +93,14 @@
   width: 38px;
   height: 38px;
   opacity: 0.5;
-  background: url("../assets/images/loader.svg") center center no-repeat;
+  background: url("./assets/images/loader.svg") center center no-repeat;
 }
 
 @keyframes lightboxIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }

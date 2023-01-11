@@ -6,7 +6,7 @@ const urlRequest = window.location.search;
 const urlSearchParams = new URLSearchParams(urlRequest);
 const userId = urlSearchParams.get("id");
 
-fetch("../data/photographers.json").then((res) => {
+fetch("./data/photographers.json").then((res) => {
   res.json().then((res) => {
     const photographersList = res;
 
@@ -14,7 +14,7 @@ fetch("../data/photographers.json").then((res) => {
     const photographer = photographersList.photographers.find(
       (photographer) => photographer.id == userId
     );
-  
+
     // Style de la bannière
     const photographerHeader = document.querySelector(".photograph-header");
     const infoContainer = document.querySelector(".info-container");
@@ -28,7 +28,7 @@ fetch("../data/photographers.json").then((res) => {
     userName.innerText = photographer.name;
     location.innerText = `${photographer.city}, ${photographer.country}`;
     quote.innerText = photographer.tagline;
-    pp.setAttribute("src", ` ../assets/photographers/${photographer.portrait}`);
+    pp.setAttribute("src", ` assets/photographers/${photographer.portrait}`);
     pp.classList.add("profile-picture");
     photographerHeader.appendChild(pp);
 
@@ -56,7 +56,7 @@ fetch("../data/photographers.json").then((res) => {
       like();
       Lightbox.init();
     });
-    
+
     async function init() {
       initSort(medias, "popularity");
       like();

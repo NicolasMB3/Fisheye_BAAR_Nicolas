@@ -31,25 +31,25 @@ const buildDom = (item) => {
 
 const buildVideo = (id, item) => {
   return `<figure>
-  <video class=" media-card media-video" width="300" height="300"  src="../assets/medias/${id}/${item.video}" type="video/mp4" alt="${item.title}" tabindex="1">
-      <source  src="../assets/medias/${id}/${item.video}" type="video/mp4">
+  <video class=" media-card media-video" width="300" height="300"  src="./assets/medias/${id}/${item.video}" type="video/mp4" alt="${item.title}" tabindex="1">
+      <source  src="./assets/medias/${id}/${item.video}" type="video/mp4">
       Your browser does not support the video tag.
   </video>
   <div class='figcaption-container'>
   <figcaption>${item.title}</figcaption>
   <h2 class='media-likes-count'  aria-label="${item.likes} likes" tabindex='1'>${item.likes} </h2>
-  <img src='../assets/icons/heart.svg'  class='heart-icon' alt='heart' aria-label='ajouter un like' tabindex='1'>
+  <img src='./assets/icons/heart.svg'  class='heart-icon' alt='heart' aria-label='ajouter un like' tabindex='1'>
   </div>
 </figure>`;
 }
 
 const buildImage = (id, item) => {
   return `<figure>
-  <img class="media-card media-image" src="../assets/medias/${id}/${item.image}" alt="${item.title}" tabindex="1">
+  <img class="media-card media-image" src="./assets/medias/${id}/${item.image}" alt="${item.title}" tabindex="1">
   <div class='figcaption-container'>
   <figcaption>${item.title} </figcaption>
   <h2 class='media-likes-count' aria-label="${item.likes} likes" tabindex='1'>${item.likes} </h2> 
-  <img src='../assets/icons/heart.svg'  class='heart-icon' alt='heart' aria-label='ajouter un like' tabindex='1'>
+  <img src='./assets/icons/heart.svg'  class='heart-icon' alt='heart' aria-label='ajouter un like' tabindex='1'>
   </div>
 </figure>`;
 }

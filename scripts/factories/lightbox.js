@@ -66,6 +66,7 @@ class Lightbox {
       this.alt = alt;
     };
     image.src = url;
+    image.setAttribute("alt", "Image: " + this.alt)
   }
 
   loadVideo(url, alt) {
@@ -95,7 +96,7 @@ class Lightbox {
     video.setAttribute("alt", alt);
     this.url = url;
     video.src = url;
-    video.innerHTML = `<source src="${url}" type="video/mp4">`;
+    video.innerHTML = `<source src="${url} alt="${this.alt}" type="video/mp4">`;
   }
 
   next(e) {
