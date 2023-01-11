@@ -12,26 +12,29 @@ main {
 .photograph-header {
     background-color: #FAFAFA;
     height: 300px;
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: space-around;
     width: 1240px;
 }
-    .pp {
-        border-radius: 100px;
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
-    }   
-    .photograph-name{
-        color:#D3573C ;
-        font-size: 50px;
-        font-weight: 100;
-        margin: 0;
-    }
-    .photograph-location{
-       color:#901C1C ; 
-    }
+
+.pp {
+    border-radius: 100px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.photograph-name {
+    color: #D3573C;
+    font-size: 50px;
+    font-weight: 100;
+    margin: 0;
+}
+
+.photograph-location {
+    color: #901C1C;
+}
 
 .contact_button {
     font-size: 20px;
@@ -80,7 +83,7 @@ main {
     font-size: 38px;
     font-weight: normal;
     text-align: left;
-    margin: 0;  
+    margin: 0;
     margin-bottom: 15px;
 }
 
@@ -105,14 +108,14 @@ form div {
     margin-bottom: 26px;
 }
 
-form input:not(#message)  {
+form input:not(#message) {
     width: 100%;
     height: 40px;
     border: none;
     border-radius: 5px;
 }
 
-form input{
+form input {
     padding-left: 10px;
     font-size: 24px;
 }
@@ -126,20 +129,21 @@ form input{
 
 }
 
-figure img, figure video {
+figure img,
+figure video {
     height: 300px;
     width: 350px;
     object-fit: cover;
     border-radius: 5px;
 }
 
-figure{
+figure {
     margin: 0;
 }
 
-.medias_section{
-    display: flex; 
-    flex-direction: row; 
+.medias_section {
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
@@ -151,11 +155,12 @@ figure{
 }
 
 .medias_section img {
-   object-fit: cover;
+    object-fit: cover;
 
 }
 
-figcaption, .figcaption-container{
+figcaption,
+.figcaption-container {
     display: flex;
     flex-direction: row;
     color: #901C1C;
@@ -164,20 +169,20 @@ figcaption, .figcaption-container{
     align-items: center;
     justify-content: space-between;
     height: 45px;
-    
+
 }
 
 figcaption {
     display: block;
     overflow: hidden;
-    width: 270px;   
+    width: 270px;
     text-overflow: ellipsis;
     white-space: nowrap;
     height: 24px;
     line-height: 24px;
 }
 
-.media-likes-count{
+.media-likes-count {
     margin: 0;
     font-size: 24px;
 }
@@ -195,6 +200,7 @@ figcaption {
     top: 12.5%;
     bottom: 11.04%;
 }
+
 .btn-like {
     background-color: #fff;
     border: none;
@@ -226,6 +232,7 @@ figcaption {
     line-height: 31.25px;
     color: black;
 }
+
 .info-price-container {
     font: DM Sans;
     font-weight: bold;
@@ -251,7 +258,7 @@ figcaption {
     align-items: center;
     width: 170px;
     background-color: #901C1C;
-    color : white;
+    color: white;
     border-radius: 5px;
     padding: 10px;
 }

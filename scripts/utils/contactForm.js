@@ -1,4 +1,4 @@
-// fonction qui permet de fermer la modal
+// Fonction qui permet de fermer la modal
 function closeModal() {
   const modal = document.getElementById("contact_modal");
   modal.style.display = "none";
@@ -26,7 +26,7 @@ function displayModal() {
   contactNameContainer.innerHTML = "Contacter " + name;
 
   document.addEventListener("keydown", (e) => {
-    let isTabPressed = e.key === "Tab" ;
+    let isTabPressed = e.key === "Tab";
     // Fermeture de la modal avec la touche "ESC"
     if (e.key === "Escape") closeModal();
     if (!isTabPressed) return;
@@ -60,5 +60,9 @@ contactForm.addEventListener("submit", (e) => {
   formData.append("Nom", nom);
   formData.append("Email", email);
   formData.append("Message", message);
+
+  // Affichage des informations dans la console dev
+  console.log(prenom, nom, email, message);
+
   closeModal();
 });

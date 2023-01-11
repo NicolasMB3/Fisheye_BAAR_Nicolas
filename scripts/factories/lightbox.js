@@ -1,4 +1,7 @@
 class Lightbox {
+
+  // Ajouter barre espace pour stopper la vidéo
+
   static init() {
     const links = Array.from(document.querySelectorAll("img:not(.logo):not(.heading-image):not(.close):not(.pp):not(#close):not(.heart-icon):not(.heart-icon-bottom), video"));
     const gallery = links.map((link) => link.getAttribute("src"));
@@ -18,7 +21,7 @@ class Lightbox {
 
     links.forEach((link) =>
       link.addEventListener("keydown", (e) => {
-       if(e.key === "Enter") {
+        if (e.key === "Enter") {
           e.preventDefault();
           new Lightbox(
             e.currentTarget.getAttribute("src"),
@@ -115,20 +118,21 @@ class Lightbox {
     window.setTimeout(() => {
       this.element.parentElement.removeChild(this.element);
     }, 500);
+    // removeEventListener supprime d'une EventTarget (cible) un écouteur d'évènements précédemment enregistré
     document.removeEventListener("keyup", this.onKeyUp);
   }
 
   onKeyUp(e) {
     switch (e.key) {
-      case 'Escape' : 
-      this.close(e);
-      break
-      case 'ArrowLeft' :
-      this.prev(e);
-      break
-      case 'ArrowRight' :
-      this.next(e);
-      break
+      case 'Escape':
+        this.close(e);
+        break
+      case 'ArrowLeft':
+        this.prev(e);
+        break
+      case 'ArrowRight':
+        this.next(e);
+        break
     }
   }
 

@@ -1,4 +1,5 @@
 async function getPhotographers() {
+  // Requête pour récupérer les informations dans le .json
   const response = await fetch("data/photographers.json");
   const name = await response.json();
   return ({photographers: name.photographers})
