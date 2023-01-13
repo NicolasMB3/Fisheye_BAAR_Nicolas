@@ -45,6 +45,7 @@ class Lightbox {
 
   // Première méthode
   loadImage(url, alt) {
+    document.body.style.overflowY = "hidden";
     this.alt = alt;
     this.url = null;
     const image = new Image();
@@ -69,6 +70,7 @@ class Lightbox {
   }
 
   loadVideo(url, alt) {
+    document.body.style.overflowY = "hidden";
     this.alt = alt;
     this.url = null;
     const video = document.createElement("video");
@@ -115,6 +117,7 @@ class Lightbox {
 
   close(e) {
     e.preventDefault();
+    document.body.style.overflowY = "auto";
     this.element.classList.add("fadeOut");
     window.setTimeout(() => {
       this.element.parentElement.removeChild(this.element);
