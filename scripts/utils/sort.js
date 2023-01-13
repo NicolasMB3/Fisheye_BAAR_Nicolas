@@ -7,9 +7,17 @@ const sortBy = (items, option) => {
     items.sort(function (a, b) {
       return new Date(b.date) - new Date(a.date);
     });
-  } else if (option === "price") {
+  } else if (option === "title") {
     items.sort(function (a, b) {
-      return b.price - a.price;
+      var titleA = a.title.toUpperCase();
+      var titleB = b.title.toUpperCase()
+      if (titleA < titleB) {
+        return -1;
+      }
+      if (titleA > titleB) {
+        return 1;
+      }
+      return 0;
     });
   }
 };

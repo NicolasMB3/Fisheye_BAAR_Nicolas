@@ -23,12 +23,12 @@ fetch("./data/photographers.json").then((res) => {
     const quote = document.querySelector(".photograph-quote");
     const pp = new Image();
     pp.classList.add("pp");
-    pp.setAttribute("alt", photographer.name);
     infoContainer.setAttribute("aria-label", `${photographer.name} - ${photographer.location}`);
     userName.innerText = photographer.name;
     location.innerText = `${photographer.city}, ${photographer.country}`;
     quote.innerText = photographer.tagline;
     pp.setAttribute("src", ` assets/photographers/${photographer.portrait}`);
+    pp.setAttribute("alt", photographer.name);
     pp.classList.add("profile-picture");
     photographerHeader.appendChild(pp);
 
