@@ -18,6 +18,7 @@ function photographerFactory(data) {
     img.setAttribute("src", picture);
     img.setAttribute("alt", `Portrait de ${name}`);
     h2.textContent = name;
+    h2.setAttribute("aria-label", name);
     p.textContent = `${city}, ${country}`;
     p2.textContent = tagline;
     p3.textContent = price + '€/jour'

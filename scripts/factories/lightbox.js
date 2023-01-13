@@ -158,9 +158,9 @@ class Lightbox {
     const dom = document.createElement("div");
     dom.classList.add("lightbox");
     dom.innerHTML = `
-            <button class="lightbox_close"></button>
-            <button class="lightbox_next"></button>
-            <button class="lightbox_prev"></button>
+            <button class="lightbox_close" aria-label="Fermer le lecteur d'image"></button>
+            <button class="lightbox_next" aria-label="Image suivante"></button>
+            <button class="lightbox_prev" aria-label="Image précèdente"></button>
             <div class="lightbox_container">
             </div>`;
     dom.querySelector(".lightbox_close").addEventListener("click", this.close.bind(this));
