@@ -23,7 +23,7 @@ function displayModal() {
   modal.style.bottom = "0";
   modal.style.margin = "0";
   modal.style.backgroundColor = "rgba(255, 255, 255, 0.6)";
-  contactNameContainer.innerHTML = "Contacter " + name;
+  contactNameContainer.innerHTML = "Contactez-moi " + name;
 
   document.addEventListener("keydown", (e) => {
     let isTabPressed = e.key === "Tab";
