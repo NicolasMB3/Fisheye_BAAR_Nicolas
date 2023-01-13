@@ -1,7 +1,5 @@
 class Lightbox {
 
-  // Ajouter barre espace pour stopper la vidéo
-
   static init() {
     const links = Array.from(document.querySelectorAll("img:not(.logo):not(.heading-image):not(.close):not(.pp):not(#close):not(.heart-icon):not(.heart-icon-bottom), video"));
     const gallery = links.map((link) => link.getAttribute("src"));
@@ -34,7 +32,7 @@ class Lightbox {
     );
   }
 
-  // New object
+  // Créer et initialiser un objet
   constructor(url, gallery, alts, alt) {
     this.element = this.buildDOM(url);
     this.gallery = gallery;
@@ -45,6 +43,7 @@ class Lightbox {
     document.addEventListener("keyup", this.onKeyUp);
   }
 
+  // Première méthode
   loadImage(url, alt) {
     this.alt = alt;
     this.url = null;
@@ -103,6 +102,7 @@ class Lightbox {
     e.preventDefault();
     let i = this.gallery.findIndex((image) => image === this.url);
     if (i === this.gallery.length - 1) i = -1;
+    // Opérateur conditionnel : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
     this.gallery[i + 1].endsWith(".mp4") ? this.loadVideo(this.gallery[i + 1], this.alts[i + 1]) : this.loadImage(this.gallery[i + 1], this.alts[i + 1]);
   }
 
@@ -123,6 +123,17 @@ class Lightbox {
     document.removeEventListener("keyup", this.onKeyUp);
   }
 
+  stopPlayVideo() {
+    const video = this.element.querySelector("video");
+    if (video) {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    }
+  }
+
   onKeyUp(e) {
     switch (e.key) {
       case 'Escape':
@@ -130,6 +141,9 @@ class Lightbox {
         break
       case 'ArrowLeft':
         this.prev(e);
+        break
+      case ' ':
+        this.stopPlayVideo();
         break
       case 'ArrowRight':
         this.next(e);
